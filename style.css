@@ -1,0 +1,404 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --cor1: #eff1e2;
+    --cor2: #3d3622;
+    --cor3: #eff1e2;
+    --cor4: #cf252c;
+    --cor5: #479b40;
+    --cor6: #a3b29f;
+}
+
+body {
+    background: var(--cor1);
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 5em;
+    background-color: var(--cor2);
+    padding: 0 30px;
+    width: 100%;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--cor1);
+    font-size: 2em;
+}
+
+.logo-oracle {
+    width: 75px;
+    height: 75px;
+}
+
+header img {
+    width: 40px;
+    height: 40px;
+}
+
+.titulo-principal {
+    width: 100vw;
+    color: var(--cor2);
+    height: 10em;
+    position: absolute;
+    top: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-forca h2 {
+    font-size: 32px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.canvas-forca {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.box-palavra-secreta {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.letras {
+    width: 16px;
+    text-align: center;
+    border-bottom: 2px solid var(--cor2);
+    color: var(--cor2);
+    padding: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.letrasEspaco {
+    width: 16px;
+    text-align: center;
+    color: var(--cor2);
+    padding: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.box-letras-erradas {
+    position: relative;
+    top: -110px;
+    left: 30px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--cor3);
+    font-weight: 600;
+}
+
+#teclado {
+    margin-top: 40px;
+    display: none;
+}
+
+.teclas button {
+    width: 24px;
+    height: 24px;
+    margin: 2px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    box-shadow: 0px 2px 2px var(--cor2);
+    border-radius: 5px;
+    border: 1px solid var(--cor2);
+    color: var(--cor2);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 900;
+}
+
+.teclas button:disabled {
+    cursor: not-allowed;
+}
+
+.teclas button:disabled {
+    cursor: not-allowed;
+}
+
+.teclas button:hover {
+    transform: scale(1.3);
+}
+
+.box-categoria {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: .8em;
+    font-weight: 600;
+    margin-top: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.sec-input-palavra {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-inicial {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-jogo {
+    display: none;
+    padding: 35px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.btn-jogar,
+.btn-add-palavras {
+    background-color: var(--cor2);
+    color: var(--cor3);
+    width: 200px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 15px;
+    margin: 75px 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-novo-jogo,
+.btn-desistir,
+.btn-dica,
+.btn-teclado,
+.btn-tentar-venceu,
+.btn-tentar-perdeu,
+.btn-salvar,
+.btn-cancelar {
+    background-color: var(--cor2);
+    color: var(--cor3);
+    width: 200px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 15px;
+    margin: 10px 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+
+.sec-input-palavra textarea {
+    resize: none;
+    border-radius: 10px;
+    padding: 1em;
+    text-transform: uppercase;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.venceu,
+.perdeu {
+    position: fixed;
+    text-align: center;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+}
+
+.container-venceu,
+.container-perdeu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    gap: 2rem;
+    position: absolute;
+    border-radius: 30px;
+    top: 30%;
+    left: 50%;
+    font-size: 2rem;
+    background-color: rgba(155, 150, 155, 0.8);
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    margin: 15px;
+}
+
+.conteiner-venceu {
+    color: var(--cor5);
+}
+
+.conteiner-perdeu {
+    color: var(--cor4)
+}
+
+
+.sec-input-palavra {
+    display: none;
+    position: relative;
+    top: -450px;
+}
+
+.text-add-palavra {
+    resize: none;
+
+}
+
+
+footer .container-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.container-redes {
+    display: flex;
+    justify-content: center;
+}
+
+
+.container-redes a ion-icon {
+    color: var(--cor2);
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+    cursor: pointer;
+
+}
+
+.container-h6 h6 {
+    color: var(--cor2);
+    text-align: center;
+    font-size: 10px;
+    padding: 3px;
+}
+
+@media (min-width: 769px) {
+    .img-forca h2 {
+        font-size: 36px;
+    }
+
+    .teclas button {
+        width: 30px;
+        height: 30px;
+    }
+
+    .box-palavra-secreta {
+        font-size: 1.3em;
+    }
+
+    .letras {
+        width: 22px;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+}
+
+@media (min-width: 1025px) {
+    .img-forca h2 {
+        font-size: 38px;
+    }
+
+    .teclas button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .box-palavra-secreta {
+        font-size: 1.4em;
+    }
+
+    .letras {
+        width: 25px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+@media (min-width: 1441px) {
+    .img-forca h2 {
+        font-size: 42px;
+    }
+
+    .teclas button {
+        width: 45px;
+        height: 45px;
+    }
+
+    .box-palavra-secreta {
+        font-size: 1.6em;
+    }
+
+    .letras {
+        width: 28px;
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+
+}
+
+@media (min-width: 2561px) {
+    .img-forca h2 {
+        font-size: 48px;
+    }
+
+    .teclas button {
+        width: 55px;
+        height: 55px;
+    }
+
+    .box-palavra-secreta {
+        font-size: 1.8em;
+    }
+
+    .letras {
+        width: 30px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+}

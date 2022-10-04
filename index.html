@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/7_icon-icons.com_73814.png">
+    <link rel="stylesheet" href="./style.css">
+    <title>Jogo da Forca</title>
+</head>
+
+<body>
+
+    <header>
+        <a href="https://www.alura.com.br" target="_blank">Alura</a>
+        <a href="https://www.oracle.com/br/" target="_blank"><img class="logo-oracle"
+                src="./img/oracle_logo_icon_168919.png" alt=""></a>
+    </header>
+
+    <div class="titulo-principal">
+        <h2>Hangman</h2>
+    </div>
+
+    <main class="container">
+        <canvas class="canvas-forca" id="canvas-forca" width="340" height="380"></canvas>
+
+        <div class="box-palavra-secreta" id="box-palavra-secreta"></div>
+
+        <div class="box-letras-erradas" id="box-letras-erradas">
+            <p></p>
+        </div>
+
+        <div id="teclado">
+            <div class="teclas">
+                <button id="tecla-A" onclick="verificaLetraEscolhida('A')">A</button>
+                <button id="tecla-B" onclick="verificaLetraEscolhida('B')">B</button>
+                <button id="tecla-C" onclick="verificaLetraEscolhida('C')">C</button>
+                <button id="tecla-D" onclick="verificaLetraEscolhida('D')">D</button>
+                <button id="tecla-E" onclick="verificaLetraEscolhida('E')">E</button>
+                <button id="tecla-F" onclick="verificaLetraEscolhida('F')">F</button>
+                <button id="tecla-G" onclick="verificaLetraEscolhida('G')">G</button>
+                <button id="tecla-H" onclick="verificaLetraEscolhida('H')">H</button>
+                <button id="tecla-I" onclick="verificaLetraEscolhida('I')">I</button>
+            </div>
+            <div class="teclas">
+                <button id="tecla-J" onclick="verificaLetraEscolhida('J')">J</button>
+                <button id="tecla-K" onclick="verificaLetraEscolhida('K')">K</button>
+                <button id="tecla-L" onclick="verificaLetraEscolhida('L')">L</button>
+                <button id="tecla-M" onclick="verificaLetraEscolhida('M')">M</button>
+                <button id="tecla-N" onclick="verificaLetraEscolhida('N')">N</button>
+                <button id="tecla-O" onclick="verificaLetraEscolhida('O')">O</button>
+                <button id="tecla-P" onclick="verificaLetraEscolhida('P')">P</button>
+                <button id="tecla-Q" onclick="verificaLetraEscolhida('Q')">Q</button>
+                <button id="tecla-R" onclick="verificaLetraEscolhida('R')">R</button>
+            </div>
+            <div class="teclas">
+                <button id="tecla-S" onclick="verificaLetraEscolhida('S')">S</button>
+                <button id="tecla-T" onclick="verificaLetraEscolhida('T')">T</button>
+                <button id="tecla-U" onclick="verificaLetraEscolhida('U')">U</button>
+                <button id="tecla-V" onclick="verificaLetraEscolhida('V')">V</button>
+                <button id="tecla-W" onclick="verificaLetraEscolhida('W')">W</button>
+                <button id="tecla-X" onclick="verificaLetraEscolhida('X')">X</button>
+                <button id="tecla-Y" onclick="verificaLetraEscolhida('Y')">Y</button>
+                <button id="tecla-Z" onclick="verificaLetraEscolhida('Z')">Z</button>
+
+            </div>
+        </div>
+        <div class="box-categoria" id="box-categoria"></div>
+        <div class="btn-inicial">
+            <button class="btn-jogar" id="btn-jogar">Iniciar Jogo</button>
+            <button class="btn-add-palavras" id="btn-add-palavra">Adicionar Palavra</button>
+        </div>
+
+        <section class="sec-input-palavra" id="sec-input-palavra">
+            <textarea name="text-add-palavra" id="text-add-palavra" class="text-add-palavra" cols="51" rows="10"
+                placeholder="Digite uma palavra ou frase"></textarea>
+            <p class="p-aviso" id="p-aviso"></p>
+            <button class="btn-salvar" id="btn-salvar">Salvar e Começar</button>
+            <button class="btn-cancelar" id="btn-cancelar">Cancelar</button>
+        </section>
+        <div class="btn-jogo">
+            <button class="btn-novo-jogo" id="btn-novo-jogo">Novo Jogo</button>
+            <button class="btn-desistir" id="btn-desistir">Desistir</button>
+            <button class="btn-dica" id="btn-dica" title="Exibir / Esconder Dica!">Dica</button>
+            <button class="btn-teclado" id="btn-teclado" title="Exibir / Esconder Teclado Virtual!">Teclado
+                Virtual</button>
+        </div>
+
+        <div class="perdeu">
+            <div class="container-perdeu">
+                <p>Não foi dessa vez!</p>
+                <p class="paragrafo-fim"></p>
+                <button class="btn-tentar-perdeu" id="btn-tentar-perdeu">Tentar Novamente</button>
+            </div>
+        </div>
+
+        <div class="venceu">
+            <div class="container-venceu">
+                <p>Parabéns. Você conseguiu!</p>
+                <button class="btn-tentar-venceu" id="btn-tentar-venceu">Jogar Novamente</button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="container-footer">
+        <div class="container-redes">
+            <a href="https://www.linkedin.com/in/jonathanvmelo/" target="_blank">
+                <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+            <a href="https://github.com/jotabnu" target="_blank">
+                <ion-icon name="logo-github"></ion-icon>
+            </a>
+        </div>
+        <div class="container-h6">
+            <h6>Created by Jonathan Volpato de Melo</h6>
+            <h6>Challenge Program Oracle ONE and Alura - Class 3</h6>
+        </div>
+    </footer>
+
+    <script src="./Js/script.js"></script>
+    <script src="./Js/canvas.js"></script>
+    <script src="./Js/palavras.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
