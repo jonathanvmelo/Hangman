@@ -37,6 +37,6 @@ A cada errada digitada um membro do corpo do boneco é desenhado.
 
 
 <p>Desenvolvido por Jonathan Volpato de Melo </p>
-<a href="https://www.linkedin.com/in/jonathan-melo-b3966b11b/><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+<a href="https://www.linkedin.com/in/jonathan-melo-b3966b11b/"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 
 
