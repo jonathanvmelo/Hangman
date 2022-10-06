@@ -6,7 +6,7 @@ str.lineWidth = 7;
 
 
 function desenhaForca() {
-    str.strokeStyle = '#cf252c';
+    str.strokeStyle = '#3d3622';
     document.getElementById('canvas-forca').style.display = 'flex';
     str.beginPath();
     str.moveTo(30, 360);

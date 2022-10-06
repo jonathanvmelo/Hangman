@@ -2,15 +2,15 @@ let palavraSecretaSorteada;
 let palavraSecretaCategoria;
 let listaDinamica = [];
 let tentativas = 6;
-let letraErradas = [];
-let letrasCorretas = [];
+var letrasUsadas = [];
+var letrasErradas = [];
 
 
 
 const perdeu = document.querySelector('.perdeu');
 const venceu = document.querySelector('.venceu');
 const categoria = document.getElementById('box-categoria');
-//const boxLetrasErradas = document.getElementById('box-letras-erradas');
+const boxLetrasErradas = document.getElementById('box-letras-erradas');
 const letras = document.querySelector('.letras');
 const letrasEspaco = document.getElementById('.letrasEspaco');
 const palavraTela = document.querySelector('.box-palavra-secreta');
@@ -57,8 +57,7 @@ function sorteiaPalavraSecreta() {
     const indexPalavra = Math.floor(Math.random() * palavras.length)
     palavraSecretaSorteada = palavras[indexPalavra].nome;
     palavraSecretaCategoria = palavras[indexPalavra].categoria;
-    console.log(palavraSecretaSorteada);
-    console.log(palavraSecretaCategoria);
+
 }
 
 function mostrarPalavraNaTela() {
@@ -119,6 +118,16 @@ function carregaImagemForca() {
     }
 }
 
+function verificaLetraEscolhida(letra) {
+    document.getElementById("tecla-" + letra).disabled = true;
+    if (tentativas > 0) {
+        mudarStyleLetra("tecla-" + letra, false);
+        comparaListas(letra);
+        mostrarPalavraNaTela();
+        mostrarLetraErrada(letra);
+    }
+}
+
 function mudarStyleLetra(tecla, condicao) {
     if (condicao == false) {
         document.getElementById(tecla).style.background = "#cf252c";
@@ -128,8 +137,19 @@ function mudarStyleLetra(tecla, condicao) {
         document.getElementById(tecla).style.background = "#008000";
         document.getElementById(tecla).style.color = "#ffffff";
     }
+}
 
-
+function recarregaTeclado(letra) {
+    //  let tec = document.getElementById("tecla-" + letra).removeProperrty('disabled');
+    //tec.style.background = "#cf252c"
+    //tec.style.color = "#ffffff";
+    let key, element;
+    for (i = 65; i < 91; i++) {
+        key = "key" + String.fromCharCode(i);
+        element.document.getElementById('tecla-' + letra);
+        element.style.removeProperty("background");
+        element.disabled = false;
+    }
 
 }
 
@@ -169,17 +189,21 @@ function comparaListas(letra) {
 }
 
 // pega a letra apertada no teclado físico
-document.addEventListener("keyup", (evento) => {
+document.addEventListener("keypress", (evento) => {
+
     const letra = evento.key.toUpperCase();
-    verificaLetraEscolhida(letra);
+    if (!letrasUsadas.includes(letra)) {
+        letrasUsadas.push(letra);
+        verificaLetraEscolhida(letra);
+    }
 });
 
-function verificaLetraEscolhida(letra) {
-    document.getElementById("tecla-" + letra).disabled = true;
-    if (tentativas > 0) {
-        mudarStyleLetra("tecla-" + letra, false);
-        comparaListas(letra);
-        mostrarPalavraNaTela();
+function mostrarLetraErrada(letra) {
+    document.getElementById("tecla-" + letra)
+    if (!palavraSecretaSorteada.includes(letra) && !letrasErradas.includes(letra)) {
+
+        letrasErradas.push(letra);
+        boxLetrasErradas.innerHTML += letra
     }
 }
 
@@ -202,7 +226,8 @@ function iniciaJogo() {
     document.querySelector('.btn-inicial').style.display = 'none';
     document.querySelector('.btn-jogo').style.display = 'flex';
     document.querySelector('.titulo-principal').style.display = 'none';
-
+    teclado.style.display = 'block';
+    boxLetrasErradas.style.display = 'block';
 }
 
 function recarregaPagina() {
@@ -214,25 +239,23 @@ function mostrarInputAddPalavra() {
     boxAddPalavra.style.display = 'block'
 }
 
-function novoJogo() {
+function novoJogo(letra) {
+
     tentativas = 6;
     letrasErradas = [];
     listaDinamica = [];
-    venceu.style.display = "none";
-    perdeu.style.display = "none";
     palavraTela.style.display = "";
     categoria.style.display = "";
-    teclado.style.display = "";
+    boxLetrasErradas.style.display = "";
     limpaCanvas()
     sorteiaPalavraSecreta()
     mostrarPalavraNaTela()
     desenhaForca()
+    recarregaTeclado()
 }
 
 function mostrarTeclado() {
-
     var containerTeclado = document.getElementById("teclado");
-
     if (containerTeclado.style.display === "none") {
         containerTeclado.style.display = "block"
     }
@@ -243,7 +266,8 @@ function mostrarTeclado() {
 
 function mostrarDica() {
     var dica = document.querySelector(".box-categoria");
-    if (dica.style.display === "none") {
+
+    if (dica.style.display == "none") {
         dica.style.display = "block"
     }
     else {

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./img/7_icon-icons.com_73814.png">
     <link rel="stylesheet" href="./style.css">
-    <title>Jogo da Forca</title>
+    <title>Hangman</title>
 </head>
 
 <body>
@@ -28,41 +28,41 @@
         <div class="box-palavra-secreta" id="box-palavra-secreta"></div>
 
         <div class="box-letras-erradas" id="box-letras-erradas">
-            <p></p>
+            <p>Letras Erradas</p>
         </div>
 
         <div id="teclado">
             <div class="teclas">
-                <button id="tecla-A" onclick="verificaLetraEscolhida('A')">A</button>
-                <button id="tecla-B" onclick="verificaLetraEscolhida('B')">B</button>
-                <button id="tecla-C" onclick="verificaLetraEscolhida('C')">C</button>
-                <button id="tecla-D" onclick="verificaLetraEscolhida('D')">D</button>
-                <button id="tecla-E" onclick="verificaLetraEscolhida('E')">E</button>
-                <button id="tecla-F" onclick="verificaLetraEscolhida('F')">F</button>
-                <button id="tecla-G" onclick="verificaLetraEscolhida('G')">G</button>
-                <button id="tecla-H" onclick="verificaLetraEscolhida('H')">H</button>
-                <button id="tecla-I" onclick="verificaLetraEscolhida('I')">I</button>
+                <button class="tecla" id="tecla-A" onclick="verificaLetraEscolhida('A')">A</button>
+                <button class="tecla" id="tecla-B" onclick="verificaLetraEscolhida('B')">B</button>
+                <button class="tecla" class="teclas" id="tecla-C" onclick="verificaLetraEscolhida('C')">C</button>
+                <button class="tecla" class="teclas" id="tecla-D" onclick="verificaLetraEscolhida('D')">D</button>
+                <button class="tecla" class="teclas" id="tecla-E" onclick="verificaLetraEscolhida('E')">E</button>
+                <button class="tecla" class="teclas" id="tecla-F" onclick="verificaLetraEscolhida('F')">F</button>
+                <button class="tecla" class="teclas" id="tecla-G" onclick="verificaLetraEscolhida('G')">G</button>
+                <button class="tecla" class="teclas" id="tecla-H" onclick="verificaLetraEscolhida('H')">H</button>
+                <button class="tecla" class="teclas" id="tecla-I" onclick="verificaLetraEscolhida('I')">I</button>
             </div>
             <div class="teclas">
-                <button id="tecla-J" onclick="verificaLetraEscolhida('J')">J</button>
-                <button id="tecla-K" onclick="verificaLetraEscolhida('K')">K</button>
-                <button id="tecla-L" onclick="verificaLetraEscolhida('L')">L</button>
-                <button id="tecla-M" onclick="verificaLetraEscolhida('M')">M</button>
-                <button id="tecla-N" onclick="verificaLetraEscolhida('N')">N</button>
-                <button id="tecla-O" onclick="verificaLetraEscolhida('O')">O</button>
-                <button id="tecla-P" onclick="verificaLetraEscolhida('P')">P</button>
-                <button id="tecla-Q" onclick="verificaLetraEscolhida('Q')">Q</button>
-                <button id="tecla-R" onclick="verificaLetraEscolhida('R')">R</button>
+                <button class="tecla" id="tecla-J" onclick="verificaLetraEscolhida('J')">J</button>
+                <button class="tecla" id="tecla-K" onclick="verificaLetraEscolhida('K')">K</button>
+                <button class="tecla" id="tecla-L" onclick="verificaLetraEscolhida('L')">L</button>
+                <button class="tecla" id="tecla-M" onclick="verificaLetraEscolhida('M')">M</button>
+                <button class="tecla" id="tecla-N" onclick="verificaLetraEscolhida('N')">N</button>
+                <button class="tecla" id="tecla-O" onclick="verificaLetraEscolhida('O')">O</button>
+                <button class="tecla" id="tecla-P" onclick="verificaLetraEscolhida('P')">P</button>
+                <button class="tecla" id="tecla-Q" onclick="verificaLetraEscolhida('Q')">Q</button>
+                <button class="tecla" id="tecla-R" onclick="verificaLetraEscolhida('R')">R</button>
             </div>
             <div class="teclas">
-                <button id="tecla-S" onclick="verificaLetraEscolhida('S')">S</button>
-                <button id="tecla-T" onclick="verificaLetraEscolhida('T')">T</button>
-                <button id="tecla-U" onclick="verificaLetraEscolhida('U')">U</button>
-                <button id="tecla-V" onclick="verificaLetraEscolhida('V')">V</button>
-                <button id="tecla-W" onclick="verificaLetraEscolhida('W')">W</button>
-                <button id="tecla-X" onclick="verificaLetraEscolhida('X')">X</button>
-                <button id="tecla-Y" onclick="verificaLetraEscolhida('Y')">Y</button>
-                <button id="tecla-Z" onclick="verificaLetraEscolhida('Z')">Z</button>
+                <button class="tecla" id="tecla-S" onclick="verificaLetraEscolhida('S')">S</button>
+                <button class="tecla" id="tecla-T" onclick="verificaLetraEscolhida('T')">T</button>
+                <button class="tecla" id="tecla-U" onclick="verificaLetraEscolhida('U')">U</button>
+                <button class="tecla" id="tecla-V" onclick="verificaLetraEscolhida('V')">V</button>
+                <button class="tecla" id="tecla-W" onclick="verificaLetraEscolhida('W')">W</button>
+                <button class="tecla" id="tecla-X" onclick="verificaLetraEscolhida('X')">X</button>
+                <button class="tecla" id="tecla-Y" onclick="verificaLetraEscolhida('Y')">Y</button>
+                <button class="tecla" id="tecla-Z" onclick="verificaLetraEscolhida('Z')">Z</button>
 
             </div>
         </div>
@@ -73,8 +73,10 @@
         </div>
 
         <section class="sec-input-palavra" id="sec-input-palavra">
-            <textarea name="text-add-palavra" id="text-add-palavra" class="text-add-palavra" cols="51" rows="10"
+            <textarea name="text-add-palavra" id="text-add-palavra" class="text-add-palavra" cols="50" rows="5"
                 placeholder="Digite uma palavra ou frase"></textarea>
+            <textarea name="text-add-dica" id="text-add-dica" class="text-add-dica" cols="50" rows="5"
+                placeholder="Digite uma Dica ou categoria"></textarea>
             <p class="p-aviso" id="p-aviso"></p>
             <button class="btn-salvar" id="btn-salvar">Salvar e Começar</button>
             <button class="btn-cancelar" id="btn-cancelar">Cancelar</button>

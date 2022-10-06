@@ -11,9 +11,16 @@
     --cor4: #cf252c;
     --cor5: #479b40;
     --cor6: #a3b29f;
+
+    --cor7: #cf252c;
+    --cor8: #ffffff;
+
+    --cor9: #008000;
+    --cor10: #ffffff;
 }
 
-body {
+body,
+html {
     background: var(--cor1);
     width: 100vw;
     height: 100vh;
@@ -49,16 +56,12 @@ header img {
 .titulo-principal {
     width: 100vw;
     color: var(--cor2);
-    height: 10em;
+    height: 2em;
     position: absolute;
     top: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.img-forca h2 {
-    font-size: 32px;
 }
 
 .container {
@@ -106,17 +109,29 @@ header img {
 }
 
 .box-letras-erradas {
+    display: none;
     position: relative;
     top: -110px;
-    left: 30px;
+    left: 60px;
     text-transform: uppercase;
     letter-spacing: 5px;
-    color: var(--cor3);
-    font-weight: 600;
+    color: var(--cor4);
+    font-weight: 700;
+    font-size: 22px;
+    width: 250px;
+}
+
+.box-letras-erradas p {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--cor4);
+    font-weight: 700;
+    font-size: .4em;
+    width: 250px;
 }
 
 #teclado {
-    margin-top: 40px;
+    margin-top: 20px;
     display: none;
 }
 
@@ -283,20 +298,24 @@ header img {
 
 .text-add-palavra {
     resize: none;
+    gap: 2%;
+    margin: 2%;
 
 }
 
 
-footer .container-footer {
+.container-footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
 }
 
 .container-redes {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 
@@ -316,14 +335,14 @@ footer .container-footer {
     padding: 3px;
 }
 
-@media (min-width: 769px) {
-    .img-forca h2 {
+@media (min-width: 768px) {
+    .titulo-principal h2 {
         font-size: 36px;
     }
 
     .teclas button {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
     }
 
     .box-palavra-secreta {
@@ -339,13 +358,13 @@ footer .container-footer {
 }
 
 @media (min-width: 1025px) {
-    .img-forca h2 {
-        font-size: 38px;
+    .titulo-principal h2 {
+        font-size: 42px;
     }
 
     .teclas button {
-        width: 35px;
-        height: 35px;
+        width: 40px;
+        height: 40px;
     }
 
     .box-palavra-secreta {
@@ -360,8 +379,8 @@ footer .container-footer {
 }
 
 @media (min-width: 1441px) {
-    .img-forca h2 {
-        font-size: 42px;
+    .titulo-principal h2 {
+        font-size: 48px;
     }
 
     .teclas button {
@@ -382,8 +401,8 @@ footer .container-footer {
 }
 
 @media (min-width: 2561px) {
-    .img-forca h2 {
-        font-size: 48px;
+    .titulo-principal h2 {
+        font-size: 56px;
     }
 
     .teclas button {
