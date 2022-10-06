@@ -5,8 +5,6 @@ let tentativas = 6;
 var letrasUsadas = [];
 var letrasErradas = [];
 
-
-
 const perdeu = document.querySelector('.perdeu');
 const venceu = document.querySelector('.venceu');
 const categoria = document.getElementById('box-categoria');
@@ -139,31 +137,15 @@ function mudarStyleLetra(tecla, condicao) {
     }
 }
 
-function recarregaTeclado(letra) {
-    //  let tec = document.getElementById("tecla-" + letra).removeProperrty('disabled');
-    //tec.style.background = "#cf252c"
-    //tec.style.color = "#ffffff";
-    let key, element;
-    for (i = 65; i < 91; i++) {
-        key = "key" + String.fromCharCode(i);
-        element.document.getElementById('tecla-' + letra);
-        element.style.removeProperty("background");
-        element.disabled = false;
-    }
-
-}
-
 function comparaListas(letra) {
     const posi = palavraSecretaSorteada.indexOf(letra)
     if (posi < 0) {
         tentativas--
         carregaImagemForca()
 
-
         if (tentativas == 0) {
             mostraMensagemPerdeu()
         }
-
     }
     else {
         mudarStyleLetra("tecla-" + letra, true)
@@ -177,7 +159,6 @@ function comparaListas(letra) {
     let vitoria = true;
     for (let i = 0; i < palavraSecretaSorteada.length; i++) {
         if (palavraSecretaSorteada[i] != listaDinamica[i]) {
-
             vitoria = false;
         }
     }
@@ -239,8 +220,7 @@ function mostrarInputAddPalavra() {
     boxAddPalavra.style.display = 'block'
 }
 
-function novoJogo(letra) {
-
+function novoJogo() {
     tentativas = 6;
     letrasErradas = [];
     listaDinamica = [];
@@ -251,7 +231,7 @@ function novoJogo(letra) {
     sorteiaPalavraSecreta()
     mostrarPalavraNaTela()
     desenhaForca()
-    recarregaTeclado()
+
 }
 
 function mostrarTeclado() {
@@ -273,7 +253,17 @@ function mostrarDica() {
     else {
         dica.style.display = "none"
     }
+}
+
+function reiniciarTeclado() {
 
 }
 
+function addPalavra() {
+
+}
+
+function salvarPalavraAdd() {
+
+}
 
