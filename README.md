@@ -4,7 +4,7 @@
 Nomeado de "A Forca", este projeto é o resultado do segundo desafio proposto na 3ª turma da #OracleNextEducation.
 
 ### ⛓️ Você pode acessar a aplicação aqui:
- https://jotabnu.github.io/Hangman/
+ [demo]https://jotabnu.github.io/Hangman/
 
 ## 📋 Sobre
 Desenvolvido apenas com HTML, CSS & Javascript esta aplicação é o famoso "Jogo da Forca" e tem por função principal entreter o usuário com um jogo simples e rápido com rodadas que possuem a quantidade máxima de 6 erros. Podendo ser jogado em qualquer dispositivo, desde o Notebook até o smartphone!
@@ -37,6 +37,6 @@ A cada errada digitada um membro do corpo do boneco é desenhado.
 
 
 <p>Desenvolvido por Jonathan Volpato de Melo </p>
-<a href="https://www.linkedin.com/in/jonathan-melo-b3966b11b/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+<a href="[demo]https://www.linkedin.com/in/jonathan-melo-b3966b11b/><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 
 
